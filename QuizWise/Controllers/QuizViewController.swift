@@ -10,6 +10,8 @@ import UIKit
 class QuizViewController: UIViewController {
     
     @IBOutlet weak var mainQuizContainer: UIView!
+    @IBOutlet weak var progressBarContainer: UIView!
+    @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var quizImageView: UIImageView!
     @IBOutlet weak var option1ButtonOutlet: UIButton!
     @IBOutlet weak var option2ButtonOutlet: UIButton!
@@ -39,6 +41,13 @@ class QuizViewController: UIViewController {
         //MARK: - Interface Design
         //Container shape
         mainQuizContainer.layer.cornerRadius = 30
+        progressBarContainer.layer.cornerRadius = 5
+        
+        progressView.layer.cornerRadius = 5
+        progressView.clipsToBounds = true
+        progressView.layer.sublayers![1].cornerRadius = 10
+        progressView.subviews[1].clipsToBounds = true
+        progressView.progressTintColor = UIColor(red: 0.58, green: 0.28, blue: 0.81, alpha: 1.00)
 
         //Option button design
         for button in optionButtons {
@@ -52,6 +61,7 @@ class QuizViewController: UIViewController {
         resetUpdateOptionButtonBorderColor()
         totalQuestions = (questions?.count)!
         getQuestions()
+        updateProgressView()
         
     }
     
@@ -148,6 +158,7 @@ class QuizViewController: UIViewController {
             resetUpdateOptionButtonBorderColor()
             optionButtonsInteraction(is: true)
             updateUI()
+            updateProgressView()
         }
     }
     
@@ -163,6 +174,13 @@ class QuizViewController: UIViewController {
             destinationViewController.delegate = self
         }
     }
+    
+    func updateProgressView(){
+        let progressViewProgress: Float = (1 / Float(totalQuestions)) * Float(questionStatus)
+        
+        progressView.progress = progressViewProgress
+        progressView.setProgress(progressViewProgress, animated: true)
+    }
 }
 
 
@@ -174,5 +192,6 @@ extension QuizViewController: RestartQuiz {
         resetUpdateOptionButtonBorderColor()
         optionButtonsInteraction(is: true)
         updateUI()
+        updateProgressView()
     }
 }
