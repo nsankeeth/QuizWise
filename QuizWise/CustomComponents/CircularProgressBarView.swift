@@ -22,7 +22,7 @@ class CircularProgressBarView: UIView {
         
         circleLayer.path = circularPath.cgPath
         
-        circleLayer.fillColor = color.cgColor
+        circleLayer.fillColor = UIColor.clear.cgColor
         circleLayer.lineCap = .round
         circleLayer.lineWidth = 20.0
         circleLayer.strokeEnd = 1.0
