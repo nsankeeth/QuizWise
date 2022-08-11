@@ -18,6 +18,7 @@
 		970BB20728A44FED000E4287 /* QuizListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970BB20628A44FED000E4287 /* QuizListViewController.swift */; };
 		970BB20D28A45306000E4287 /* QuizCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970BB20C28A45306000E4287 /* QuizCategoryCell.swift */; };
 		970BB21428A48EE2000E4287 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970BB21328A48EE2000E4287 /* ImageHelper.swift */; };
+		97F8A30928A55ED600143533 /* CircularProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F8A30828A55ED600143533 /* CircularProgressBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		970BB20628A44FED000E4287 /* QuizListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizListViewController.swift; sourceTree = "<group>"; };
 		970BB20C28A45306000E4287 /* QuizCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizCategoryCell.swift; sourceTree = "<group>"; };
 		970BB21328A48EE2000E4287 /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
+		97F8A30828A55ED600143533 /* CircularProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				970BB20C28A45306000E4287 /* QuizCategoryCell.swift */,
+				97F8A30828A55ED600143533 /* CircularProgressBarView.swift */,
 			);
 			path = CustomComponents;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 				970BB20728A44FED000E4287 /* QuizListViewController.swift in Sources */,
 				970BB1E428A3321B000E4287 /* AppDelegate.swift in Sources */,
 				970BB20D28A45306000E4287 /* QuizCategoryCell.swift in Sources */,
+				97F8A30928A55ED600143533 /* CircularProgressBarView.swift in Sources */,
 				970BB1FD28A3F5F0000E4287 /* QuizCategoryViewController.swift in Sources */,
 				970BB1E628A3321B000E4287 /* SceneDelegate.swift in Sources */,
 				970BB1FB28A3F5F0000E4287 /* ResultViewController.swift in Sources */,

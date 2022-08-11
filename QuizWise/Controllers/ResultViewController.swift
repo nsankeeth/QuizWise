@@ -25,7 +25,9 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var resultViewContainer: UIView!
     @IBOutlet weak var lowerContainer: UIView!
-
+    @IBOutlet weak var circularProgressBarView: CircularProgressBarView!
+    @IBOutlet weak var successPercentageLabel: UILabel!
+    
     var correctAnswerWithTotalQuestions: [Int]?
 
     override func viewDidLoad() {
@@ -48,11 +50,13 @@ class ResultViewController: UIViewController {
         if let receivedScores = self.correctAnswerWithTotalQuestions {
             let correctAnswers = receivedScores[0]
             let totalQuestions = receivedScores[1]
-            let percentage = Int(round((Double(correctAnswers)/Double(totalQuestions)) * 100))
+            let completion = Double(correctAnswers) / Double(totalQuestions)
+            let percentage = Int(round( completion * 100))
             
             totalQuestionsLabel.text = String(totalQuestions)
             correctAnswersLabel.text = String(correctAnswers)
             marksLabel.text = "\(correctAnswers)/\(totalQuestions)"
+            successPercentageLabel.text = "\(percentage)%"
 
             if percentage >= 45 {
                 resultLabel.textColor = UIColor.green
@@ -61,7 +65,11 @@ class ResultViewController: UIViewController {
                 resultLabel.textColor = UIColor.red
                 resultLabel.text = "Fail"
             }
+            
+            circularProgressBarView.createCircularPath(completion: completion, color: UIColor(red: 0.58, green: 0.28, blue: 0.81, alpha: 1.00))
         }
+        
+        animateProgressBarView()
     }
 
     @IBAction func restartQuizButtonPressed(_ sender: UIButton) {
@@ -73,5 +81,8 @@ class ResultViewController: UIViewController {
     @IBAction func mainMenuButtonPressed(_ sender: UIButton) {
         self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
     }
-
+    
+    func animateProgressBarView() {let circularViewDuration: TimeInterval = 2
+        circularProgressBarView.progressAnimation(duration: circularViewDuration)
+    }
 }

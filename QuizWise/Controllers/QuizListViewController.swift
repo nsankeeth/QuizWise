@@ -65,7 +65,9 @@ class QuizListViewController: UIViewController, UITableViewDataSource, UITableVi
             
             if let data = data, let dataString = String(data: data, encoding: .utf8) {
                 let quizDict = dataString.toJSON() as? [String: Any]
-                self.quizData = quizDict!["records"] as? [Any]
+                let quizCategories = quizDict!["records"] as? [AnyObject]
+                
+                self.quizData = quizCategories!.sorted(by: { $1["quiz_set_id"] as! String > $0["quiz_set_id"] as! String })
                 
                 DispatchQueue.main.async {
                     self.quizCategoryTableView.reloadData()

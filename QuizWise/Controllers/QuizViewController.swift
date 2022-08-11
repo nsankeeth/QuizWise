@@ -18,6 +18,7 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var nextFinishButtonOutlet: UIButton!
     @IBOutlet weak var questionStatusLabelOutlet: UILabel!
     @IBOutlet weak var scoreStatusLabelOutlet: UILabel!
+    @IBOutlet weak var questionLabelOutlet: UILabel!
     @IBOutlet weak var exitButtonOutlet: UIButton!
     
     var optionButtons = [UIButton]()
@@ -70,6 +71,8 @@ class QuizViewController: UIViewController {
         
         let questionImage = question["image_url"] as? String ?? ""
         ImageHelper.loadImageOrPlaceholder(from: questionImage, target: quizImageView, placeholder: "quiz image placeholder")
+        
+        questionLabelOutlet.text = question["title"] as? String
         
         let choices = question["choices"] as? [String] ?? []
         var choiceArrayIndex: Int = 0

@@ -36,7 +36,7 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score 5/7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9Q-mX-Ik8">
                                                         <rect key="frame" x="297.5" y="16" width="84.5" height="23"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
-                                                        <color key="textColor" red="0.58578910080000002" green="0.2784313725" blue="0.81281754240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" red="0.58431372549019611" green="0.27843137254901962" blue="0.81176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -58,12 +58,21 @@
                                                 <rect key="frame" x="0.0" y="55" width="398" height="330.5"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cfO-Ad-noL">
-                                                        <rect key="frame" x="16" y="8" width="366" height="314.5"/>
+                                                        <rect key="frame" x="16" y="8" width="366" height="285.5"/>
                                                     </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VUK-jN-gLs">
+                                                        <rect key="frame" x="8" y="301.5" width="382" height="21"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <color key="textColor" red="0.58431372549019611" green="0.27843137254901962" blue="0.81176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="cfO-Ad-noL" secondAttribute="bottom" constant="8" id="5iy-KR-O2y"/>
+                                                    <constraint firstItem="VUK-jN-gLs" firstAttribute="leading" secondItem="5MG-IV-6FB" secondAttribute="leading" constant="8" id="HXE-AL-WdX"/>
+                                                    <constraint firstItem="VUK-jN-gLs" firstAttribute="top" secondItem="cfO-Ad-noL" secondAttribute="bottom" constant="8" id="Rfn-lC-L9E"/>
+                                                    <constraint firstAttribute="bottom" secondItem="VUK-jN-gLs" secondAttribute="bottom" constant="8" id="TSt-3b-yki"/>
                                                     <constraint firstItem="cfO-Ad-noL" firstAttribute="leading" secondItem="5MG-IV-6FB" secondAttribute="leading" constant="16" id="dFA-bl-zOd"/>
+                                                    <constraint firstAttribute="trailing" secondItem="VUK-jN-gLs" secondAttribute="trailing" constant="8" id="eLn-AX-i8B"/>
                                                     <constraint firstItem="cfO-Ad-noL" firstAttribute="top" secondItem="5MG-IV-6FB" secondAttribute="top" constant="8" id="qJY-NM-qu8"/>
                                                     <constraint firstAttribute="trailing" secondItem="cfO-Ad-noL" secondAttribute="trailing" constant="16" id="ucM-o1-Jdc"/>
                                                 </constraints>
@@ -227,6 +236,7 @@
                         <outlet property="option2ButtonOutlet" destination="JHh-HP-cAh" id="be1-u0-nwI"/>
                         <outlet property="option3ButtonOutlet" destination="660-1F-auX" id="pEu-wa-h0d"/>
                         <outlet property="option4ButtonOutlet" destination="oOH-lI-Y6v" id="Rmi-zz-f0O"/>
+                        <outlet property="questionLabelOutlet" destination="VUK-jN-gLs" id="9mw-ki-Uge"/>
                         <outlet property="questionStatusLabelOutlet" destination="nWB-gc-kaH" id="WCK-YH-hc3"/>
                         <outlet property="quizImageView" destination="cfO-Ad-noL" id="pjJ-YT-Iy6"/>
                         <outlet property="scoreStatusLabelOutlet" destination="Y9Q-mX-Ik8" id="YUn-8d-Jvq"/>
@@ -235,7 +245,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BYv-TH-T32" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="858" y="84"/>
+            <point key="canvasLocation" x="857.97101449275374" y="83.705357142857139"/>
         </scene>
         <!--Quiz Category View Controller-->
         <scene sceneID="LHB-XU-27A">
@@ -502,7 +512,7 @@
                                 <rect key="frame" x="0.0" y="60" width="414" height="666"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zz7-N7-TFI" userLabel="Main Quiz Container">
-                                        <rect key="frame" x="8" y="13" width="398" height="249"/>
+                                        <rect key="frame" x="8" y="13" width="398" height="637"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kwU-lb-vjN" userLabel="Upper Inner Container">
                                                 <rect key="frame" x="0.0" y="0.0" width="398" height="55"/>
@@ -520,8 +530,34 @@
                                                     <constraint firstItem="c57-Bq-0fn" firstAttribute="centerX" secondItem="kwU-lb-vjN" secondAttribute="centerX" id="sMH-HA-Pea"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gkW-z5-sUw" userLabel="Middle Inner Container">
+                                                <rect key="frame" x="0.0" y="55" width="398" height="404"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K4i-4y-Pvj" customClass="CircularProgressBarView" customModule="QuizWise" customModuleProvider="target">
+                                                        <rect key="frame" x="49" y="52" width="300" height="300"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agM-Wo-dlb" userLabel="O">
+                                                                <rect key="frame" x="142.5" y="138" width="15.5" height="24"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                                <color key="textColor" red="0.58431372549019611" green="0.27843137254901962" blue="0.81176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="agM-Wo-dlb" firstAttribute="centerX" secondItem="K4i-4y-Pvj" secondAttribute="centerX" id="7k2-Pu-loS"/>
+                                                            <constraint firstAttribute="width" constant="300" id="LGr-D2-Foc"/>
+                                                            <constraint firstItem="agM-Wo-dlb" firstAttribute="centerY" secondItem="K4i-4y-Pvj" secondAttribute="centerY" id="Och-lE-4V0"/>
+                                                            <constraint firstAttribute="height" constant="300" id="aBj-tl-l6e"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="K4i-4y-Pvj" firstAttribute="centerX" secondItem="gkW-z5-sUw" secondAttribute="centerX" id="hQ7-7o-jsh"/>
+                                                    <constraint firstItem="K4i-4y-Pvj" firstAttribute="centerY" secondItem="gkW-z5-sUw" secondAttribute="centerY" id="scP-qw-rSW"/>
+                                                </constraints>
+                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Psb-AH-pTe" userLabel="Lower Inner Container">
-                                                <rect key="frame" x="0.0" y="71" width="398" height="178"/>
+                                                <rect key="frame" x="0.0" y="459" width="398" height="178"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jo9-wU-jZd">
                                                         <rect key="frame" x="0.0" y="0.0" width="398" height="162"/>
@@ -608,17 +644,21 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
+                                            <constraint firstItem="gkW-z5-sUw" firstAttribute="bottom" secondItem="Psb-AH-pTe" secondAttribute="top" id="1mP-6N-YLF"/>
                                             <constraint firstAttribute="trailing" secondItem="Psb-AH-pTe" secondAttribute="trailing" id="2hn-Dj-ta0"/>
+                                            <constraint firstItem="gkW-z5-sUw" firstAttribute="top" secondItem="kwU-lb-vjN" secondAttribute="bottom" id="310-Y9-10E"/>
+                                            <constraint firstItem="gkW-z5-sUw" firstAttribute="leading" secondItem="Zz7-N7-TFI" secondAttribute="leading" id="D7i-dc-MIR"/>
                                             <constraint firstItem="Psb-AH-pTe" firstAttribute="leading" secondItem="Zz7-N7-TFI" secondAttribute="leading" id="K5d-Zf-1cN"/>
                                             <constraint firstItem="kwU-lb-vjN" firstAttribute="top" secondItem="Zz7-N7-TFI" secondAttribute="top" id="LP7-Ax-iXQ"/>
                                             <constraint firstItem="kwU-lb-vjN" firstAttribute="leading" secondItem="Zz7-N7-TFI" secondAttribute="leading" id="UdE-3M-Hn8"/>
                                             <constraint firstAttribute="trailing" secondItem="kwU-lb-vjN" secondAttribute="trailing" id="dQD-fn-GPs"/>
-                                            <constraint firstItem="Psb-AH-pTe" firstAttribute="top" secondItem="kwU-lb-vjN" secondAttribute="bottom" constant="16" id="w8O-ek-uDY"/>
+                                            <constraint firstAttribute="trailing" secondItem="gkW-z5-sUw" secondAttribute="trailing" id="fsi-6b-LDA"/>
                                             <constraint firstAttribute="bottom" secondItem="Psb-AH-pTe" secondAttribute="bottom" id="xue-PJ-YFl"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Zz7-N7-TFI" secondAttribute="bottom" constant="16" id="KXU-VQ-mic"/>
                                     <constraint firstItem="Zz7-N7-TFI" firstAttribute="top" secondItem="dgd-w2-jcE" secondAttribute="top" constant="13" id="LKb-dy-hl1"/>
                                     <constraint firstAttribute="trailing" secondItem="Zz7-N7-TFI" secondAttribute="trailing" constant="8" id="ujG-9N-GwX"/>
                                     <constraint firstItem="Zz7-N7-TFI" firstAttribute="leading" secondItem="dgd-w2-jcE" secondAttribute="leading" constant="8" id="x87-Px-gKn"/>
@@ -685,6 +725,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="M64-Eg-rhX"/>
                     <connections>
+                        <outlet property="circularProgressBarView" destination="K4i-4y-Pvj" id="O7S-qI-wAC"/>
                         <outlet property="correctAnswersLabel" destination="KLK-Z6-S5e" id="wR7-if-1t1"/>
                         <outlet property="lowerContainer" destination="avZ-Is-pX9" id="IaL-bf-Zh8"/>
                         <outlet property="mainMenuOutlet" destination="uw1-Ov-ai5" id="nsZ-eE-Sug"/>
@@ -693,6 +734,7 @@
                         <outlet property="restartQuizOutlet" destination="AwJ-yd-Wt1" id="1wG-d9-g3d"/>
                         <outlet property="resultLabel" destination="G1z-Bl-Zfd" id="otx-aa-Zr4"/>
                         <outlet property="resultViewContainer" destination="jo9-wU-jZd" id="bgk-aQ-OVt"/>
+                        <outlet property="successPercentageLabel" destination="agM-Wo-dlb" id="G79-ww-zAK"/>
                         <outlet property="totalQuestionsLabel" destination="2pO-F1-Oao" id="O9J-by-gtO"/>
                     </connections>
                 </viewController>
